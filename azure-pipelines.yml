@@ -25,6 +25,6 @@ stages:
           containerRegistry: 'mgok5 Docker Hub'
           repository: 'mgok5/weatherapi'
           command: 'buildAndPush'
-          Dockerfile: '**/Dockerfile'
+          Dockerfile: '/home/vsts/work/1/s/**/Dockerfile'
           tags: |
             $(tag)
