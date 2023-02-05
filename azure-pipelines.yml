@@ -26,5 +26,6 @@ stages:
           repository: 'mgok5/weatherapi'
           command: 'buildAndPush'
           Dockerfile: '.pipeline/Dockerfile'
+          buildContext: $(Build.SourcesDirectory)
           tags: |
             $(tag)
