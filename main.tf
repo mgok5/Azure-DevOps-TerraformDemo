@@ -23,6 +23,12 @@ terraform {
   }
 }
 
+// we can describe variables like this
+variable "imagebuild" { //name is the name we write in azurepipeline
+    type        = string
+    default     = "Latest Image Build"  
+}
+
 resource "azurerm_resource_group" "tf_rg" {
   name     = "tfmainrg"
   location = "westeurope"
@@ -39,7 +45,7 @@ resource "azurerm_container_group" "tf_cg" {
 
     container {
       name                      = "weatherapi"
-      image                     = "mgok5/weatherapi"
+      image                     = "mgok5/weatherapi:${var.imagebuild}"
       cpu                       = "1"
       memory                    = "1"
 
