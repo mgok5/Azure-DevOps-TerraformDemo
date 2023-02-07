@@ -14,10 +14,11 @@ provider "azurerm" {
     features{}  
 }
 
+// Create these resources at azuree
 terraform {
   backend "azurerm" {
     resource_group_name = "tf_rg_blobstore"
-    storage_account_name = "tfstoragestatefile"
+    storage_account_name = "tfstoragestatefile" //blobstorage
     container_name = "tfstate"
     key            = "terraform.tfstate"    
   }
